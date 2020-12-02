@@ -8,6 +8,13 @@
 </head>
 <body>
  <p> hello flask</p>
-  <img src="{{url_for('static', filename='n01.jpg')}}" alt="null">
+  <img src="{{url_for('static', filename='images/'+image_list[1])}}" alt="null">
+  <br>
+  {% for x in range(len(image_list)) %}
+                   
+     <img src="{{ url_for('static', filename='images/'+image_list[x])}}" alt="null">
+                    
+
+    {% endfor %}
 </body>
 </html>
