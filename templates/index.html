@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <title>Document</title>
   
 </head>
@@ -10,11 +12,15 @@
  <p> hello flask</p>
   <img src="{{url_for('static', filename='images/'+image_list[1])}}" alt="null">
   <br>
-  {% for x in range(len(image_list)) %}
+  {% for x in image_list %}
                    
-     <img src="{{ url_for('static', filename='images/'+image_list[x])}}" alt="null">
+     <img src="{{ url_for('static', filename='images/'+ x )}}" alt="null">
                     
 
     {% endfor %}
+
+    <form action="/post" method="POST" name="rare" class="form-inline">
+                <button type="submit" name="rare" class="btn btn-primary" style="width: 300px;" >1回レアガチャを回す</button>
+              </form>
 </body>
 </html>
